@@ -16,14 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blog import views
-from . import testdb,search,search2
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index$', views.index, name='index'),
-    url(r'^$', views.hello, name='hello'),
-    url(r'^testdb$', testdb.testdb, name='testdb'),
-    url(r'^search_form$', search.search_form),
-    url(r'^search$', search.search),
-    url(r'^search-post$', search2.search_post),
+    url(r'^$', views.home, name='home'),
+    url(r'^index/', views.index, name='index'),
+
 ]

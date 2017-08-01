@@ -1,18 +1,36 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from __future__ import unicode_literals
+
 from django.db import models
 
-# Create your models here.
-class Test(models.Model):
-    name = models.CharField(max_length=20)
 
-class Contact(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField(default=0)
-    email = models.EmailField()
-    def __unicode__(self):
-        return self.name
+class Tb20160217(models.Model):
+    xuhao = models.CharField(max_length=8)
+    banming = models.CharField(max_length=8)
+    ndate = models.CharField(max_length=10)
+    title = models.CharField(max_length=45)
+    imgsrc = models.CharField(max_length=80)
+    body = models.TextField()
 
-class Tag(models.Model):
-    contact = models.ForeignKey(Contact)
-    name = models.CharField(max_length=30)
-    def __unicode__(self):
-        return self.name
+    class Meta:
+        managed = False
+        db_table = 'tb_2016_02_17'
+
+
+class Tb20170801(models.Model):
+    xuhao = models.CharField(max_length=8)
+    banming = models.CharField(max_length=16)
+    ndate = models.CharField(max_length=10)
+    title = models.CharField(max_length=45)
+    imgsrc = models.CharField(max_length=80)
+    body = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'tb_2017_08_01'
