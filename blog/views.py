@@ -4,12 +4,14 @@ from blog.models import Tb20170801
 # Create your views here.
 def index(request):
     #msg = Tb20170801.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
-    msg = Tb20170801.objects.filter().order_by('?')[:4]
-    #print(msg)
+    msg1 = Tb20170801.objects.filter().order_by('?')[:8]
+    msg = Tb20170801.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
+    #print(msg1)
     context = {
-        'news':msg,
+        'news':msg,   # 含有图片的新闻
+        'msgs':msg1,  #  随机得到四条新闻
     }
-    return  HttpResponse(request,'index.html',context)
+    return  render(request,'index.html',context)
 
 def home(request):
     # context = {}

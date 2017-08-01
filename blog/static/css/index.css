@@ -125,6 +125,7 @@ label {
   background-image: url("../img/head_logo.png");
   background-repeat: no-repeat;
   background-position: 0 center;
+  background-position: 0 center;
 }
 
 .nav {
@@ -154,10 +155,11 @@ label {
   vertical-align: middle;
 }
 .nav-list li a:hover {
-  color: #3590de;
+  /*color: #3590de;*/
+  color:#C2260D;
 }
 .nav-list li a:hover:after {
-  color: #65b2f1;
+  color: #C2260D;
   width: 63px;
   transition: all 0.2s linear;
   background-color: white;

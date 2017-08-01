@@ -10,23 +10,33 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Tb20160217(models.Model):
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class Tb20161130(models.Model):
     xuhao = models.CharField(max_length=8)
-    banming = models.CharField(max_length=8)
-    ndate = models.CharField(max_length=10)
+    editor = models.CharField(max_length=50)
+    banming = models.CharField(max_length=16)
     title = models.CharField(max_length=45)
     imgsrc = models.CharField(max_length=80)
     body = models.TextField()
 
     class Meta:
         managed = False
-        db_table = 'tb_2016_02_17'
+        db_table = 'tb_2016_11_30'
 
 
 class Tb20170801(models.Model):
     xuhao = models.CharField(max_length=8)
+    editor = models.CharField(max_length=50)
     banming = models.CharField(max_length=16)
-    ndate = models.CharField(max_length=10)
     title = models.CharField(max_length=45)
     imgsrc = models.CharField(max_length=80)
     body = models.TextField()

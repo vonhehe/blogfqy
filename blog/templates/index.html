@@ -27,30 +27,10 @@
 
       <div class="logo">
         <a href="index.html">
-          媒体-发布
+          新闻媒体-发布
         </a>
       </div>
 
-      <!-- nav >
-      <div class="nav">
-        <ul class="nav-list">
-          <li>
-            <a href="detail.html"><span>首页</span></a>
-          </li>
-          <li>
-            <a href="detail.html"><span>玄幻</span></a>
-          </li>
-          <li>
-            <a href="detail.html"><span>修仙</span></a>
-          </li>
-          <li>
-            <a href="detail.html"><span>都市</span></a>
-          </li>
-          <li>
-            <a href="detail.html"><span>文学</span></a>
-          </li>
-        </ul>
-      </div><!-- ./nav -->
 
       <div class="search">
         <form action=".html" method="get" target="_blank">
@@ -122,7 +102,7 @@
 
 
 
-
+        <!--新闻要点-->
         <div class="hot-recommend">
           <ul class="hot-list">
             {% for new in news %}
@@ -146,257 +126,46 @@
         </div><!-- /.recommend -->
 
 
-        <!-- Xuanhuan -->
+        <!-- 新闻精选 -->
         <div class="xuanhuan">
           <div class="xuanhuan-title">
-            <span>玄幻</span>
+            <span>精选</span>
             <p class="txt">fantasy</p>
-            <p>novel</p>
+            <p>news</p>
             <span class="more"><a href="more.html">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
           </div>
           <div class="wrap890 xuanhuan-wrap">
 
             <ul class="book-list">
+                {% for msg in msgs %}
               <li class="book">
                 <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover01.jpg" alt="" width="136" height="180" /></a>
+                  <a class="cover" href="detail.html">
+                      <!--有些新闻没有图片，为了美观我们默认一个图片代替-->
+                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src='/static/img/default.jpg'" alt="no screen"/></a>
                   <div class="book-presentation">
-                    <h2><a href="detail.html">The Sacred Ruins神圣废墟</a></h2>
+                    <h2><a href="detail.html"> {{ msg.title }}</a></h2>
                     <p class="book-info">
                       <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
+                      <span>{{ msg.banming }}</span>
+                      <span class="info-txt">{{ msg.xuhao }}</span>
+                      <span>{{ len(msg.body)}}字</span>
                     </p>
                     <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>啊啊</span>
+                      <a href="javascript: void(0);">记者:
+                        <span>{{ msg.editor }}</span>
                       </a>
                     </p>
                     <p class="desc">
-                      当潮水涨落时，随着月亮的消失和生长.当薄雾笼罩着大地时，看哪！一旦熄灭的火在神圣的废墟中燃烧，而那枷锁束缚世界的枷锁，一个崭新的世界即将出现，秘密隐藏在神秘的斗篷里慢慢的……
+                      {{ msg.body }}
                     </p>
                   </div>
                 </div>
               </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover02.png" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">Otherworldly Evil Monarch</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>Slice</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件...... 
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover01.jpg" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">The Sacred Ruins神圣废墟</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>熟熟</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      当潮水涨落时，随着月亮的消失和生长.当薄雾笼罩着大地时，看哪！一旦熄灭的火在神圣的废墟中燃烧，而那枷锁束缚世界的枷锁，一个崭新的世界即将出现，秘密隐藏在神秘的斗篷里慢慢的……
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover02.png" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">Otherworldly Evil Monarch</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>苗苗</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件...... 
-                    </p>
-                  </div>
-                </div>
-              </li>
-
+                {% endfor %}
             </ul>
-
-            
           </div>
         </div>
-
-
-
-
-
-<!-- Xuanhuan -->
-        <div class="xuanhuan">
-          <div class="xuanhuan-title">
-            <span>玄幻</span>
-            <p class="txt">fantasy</p>
-            <p>novel</p>
-            <span class="more"><a href="more.html">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
-          </div>
-          <div class="wrap890 xuanhuan-wrap">
-
-            <ul class="book-list">
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover01.jpg" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">The Sacred Ruins神圣废墟</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>心心</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      当潮水涨落时，随着月亮的消失和生长.当薄雾笼罩着大地时，看哪！一旦熄灭的火在神圣的废墟中燃烧，而那枷锁束缚世界的枷锁，一个崭新的世界即将出现，秘密隐藏在神秘的斗篷里慢慢的……
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover02.png" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">Otherworldly Evil Monarch</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>世世</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件...... 
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover01.jpg" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">The Sacred Ruins神圣废墟</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>梦梦</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      当潮水涨落时，随着月亮的消失和生长.当薄雾笼罩着大地时，看哪！一旦熄灭的火在神圣的废墟中燃烧，而那枷锁束缚世界的枷锁，一个崭新的世界即将出现，秘密隐藏在神秘的斗篷里慢慢的……
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover02.png" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">Otherworldly Evil Monarch</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>剑剑</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件...... 
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="book">
-                <div class="book-wrap">
-                  <a class="cover" href="detail.html"><img src="img/cover02.png" alt="" width="136" height="180" /></a>
-                  <div class="book-presentation">
-                    <h2><a href="detail.html">Otherworldly Evil Monarch</a></h2>
-                    <p class="book-info">
-                      <i></i>
-                      <span>玄幻</span>
-                      <span class="info-txt">连载</span>
-                      <span>314.14万字</span>
-                    </p>
-                    <p class="book-author">
-                      <a href="javascript: void(0);">作者:
-                        <span>剑剑</span>
-                      </a>
-                    </p>
-                    <p class="desc">
-                      俊熙是现代地球的第一刺客，他在暗杀领域的技能和知识是无与伦比的，他的成就是前所未有的，他的声望吓倒了整个黑社会。然而，在劫持神秘宝藏的任务中，发生了一场不幸事件...... 
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-
-            </ul>
-
-            
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </div>
-</section>
 <!--===== Main End =====-->
 
 
@@ -406,19 +175,19 @@
   <div class="wrap1000 footer-wrap">
     <div class="logo-footer">
       <a href="detail.html">
-        <img src="/static/images/footer_logo.png" alt="" width="55" height="50" />
-        <span class="footer-txt">潭州教育Python学院</span>
+        <img src="/static/img/footer_logo.png" alt="" width="55" height="50" />
+        <span class="footer-txt">大河报新闻发布</span>
       </a>
       <span class="footer-font">
-        TAN ZHOU EDU PYTHON COLLEGE
+        DaHeBao Python Scrapy&Django
       </span>
     </div>
     <div class="copy-right">
       <p>
-        本站小说均来源于互联网,仅供技术学习和交流使用,请尊重原创作者切勿用商业用途,请于下载后的24小时内删除。
+        本站新闻均来源于大河报网站,仅供技术学习和交流使用,请尊重原创内容切勿用商业用途,如有侵权则立即删除。
       </p>
       <p class="">
-        Copyright © 2017 All Rights Reserved 湖南潭州教育网络科技有限公司PYTHON学院 
+        Copy From ©<a href=" http://newpaper.dahe.cn/dhb/html/2016-11/30/node_897.htm">大河报--电子版</a>
       </p>
     </div>
   </div>
