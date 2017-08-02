@@ -1,18 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>正在制作</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.4/styles/monokai_sublime.min.css">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
+    <title>vonhehe --大河报</title>
+    <!-- Main Theme -->
+    <link rel="stylesheet" href="/static/css/index.css" />
+
+    <!-- Font -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_n5vylbuqe61or.css" />
+  </head>
 <body>
-    <div style="padding:250px;border-radius:10px;border:10px solid #ffffff;" >
-        <h2><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp参加的一些项目记录，爬取媒体、词云展示、web发布，之后会将此功能附在“开始使用”，实现一键爬取当天新闻，并发布。
-        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp目前正在开发中，敬请期待。。。</p></h2>>
+
+
+<!--===== Full Screen BG =====-->
+<div class="full-pic"></div>
+
+
+
+<!--===== Begin Header =====-->
+<header class="header">
+  <div class="fixed-head" style="position: fixed; width: 100%; background-color: #65b2f1; -webkit-transform: translateZ(0);">
+    <div class="wrap1000 head-wrap">
+
+      <div class="logo">
+        <a href="start.html">
+          新闻媒体-发布
+        </a>
+      </div>
+
+
+      <div class="search">
+        <form action=".html" method="get" target="_blank">
+          <input name="kw" placeholder="搜索新闻" class="search-inp" type="text" maxlength="10" />
+          <input id="search-submit-btn" type="submit" style="display: none;" />
+          <label for="search-submit-btn">
+            <i class="iconfont icon-search"></i>
+          </label>
+        </form>
+      </div>
+
+    </div><!-- /.wrap1000 -->
+  </div>
+</header>
+<!--===== header End =====-->
+
+
+
+<!--===== Begin Main =====-->
+<section class="main">
+  <div class="main-wrap wrap1000">
+    <div class="hot-section">
+
+      <div class="hot-shadow">
+        <div class="hot-title">最热</div>
+      </div>
+      
+      <!-- figure -->
+      <div class="figure"></div>
+
+      <div class="hot-content">
+
+        <!-- banner >
+        <div class="banner">
+          <ul class="banner-imgs">
+            <li>
+              <a href="detail.html">
+                  <img src="img/1.jpg" alt="" width="750" height="300" />
+              </a>
+            </li>
+            <li>
+              <a href="detail.html"><img src="img/2.jpg" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="detail.html"><img src="img/3.jpg" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="detail.html"><img src="img/4.jpg" alt="" width="750" height="300" /></a>
+            </li>
+            <li>
+              <a href="detail.html"><img src="img/5.png" alt="" width="750" height="300" /></a>
+            </li>
+          </ul><!-- /.imgs -->
+
+          <div class="control-page">
+            <a class="iconfont icon-bannerzuo" href="javascript: void(0);"></a>
+            <a class="iconfont icon-banneryou" href="javascript: void(0);"></a>
+          </div>
+
+          <ul class="banner-btn">
+            <li class="banner-btn-on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+        </div><!-- /.banner -->
+
+
+
+        <!--新闻要点-->
+        <div class="hot-recommend">
+          <ul class="hot-list">
+            {% for new in news %}
+
+            <li>
+              <a href="start.html">
+                <div>
+                  <img src={{ new.imgsrc }} alt="" width="" /><span></span>
+                </div>
+                <p>
+                  <b>{{ new.xuhao }} </b>
+                  <span class="author">{{ new.banming }}</span>
+                  <span class="book-description">
+                    {{ new.title }}
+                  </span>
+                </p>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div><!-- /.recommend -->
+
+
+        <!-- 新闻精选 -->
+        <div class="xuanhuan">
+          <div class="xuanhuan-title">
+            <span>精选</span>
+            <p class="txt">fantasy</p>
+            <p>news</p>
+            <span class="more"><a href="more.html">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+          </div>
+          <div class="wrap890 xuanhuan-wrap">
+
+            <ul class="book-list">
+                {% for msg in msgs %}
+              <li class="book">
+                <div class="book-wrap">
+                  <a class="cover" href="detail.html">
+                      <!--有些新闻没有图片，为了美观我们默认一个图片代替-->
+                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src='/static/img/default.jpg'" alt="no screen"/></a>
+                  <div class="book-presentation">
+                    <h2><a href="detail.html"> {{ msg.title }}</a></h2>
+                    <p class="book-info">
+                      <i></i>
+                      <span>{{ msg.banming }}</span>
+                      <span class="info-txt">{{ msg.xuhao }}</span>
+                      <span>{{ msg.body|length }}字</span>
+                    </p>
+                    <p class="book-author">
+                      <a href="javascript: void(0);">记者:
+                        <span>{{ msg.editor }}</span>
+                      </a>
+                    </p>
+                    <p class="desc">
+                      {{ msg.body }}
+                    </p>
+                  </div>
+                </div>
+              </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+<!--===== Main End =====-->
+
+
+
+<!--===== Begin Footer =====-->
+<footer class="footer">
+  <div class="wrap1000 footer-wrap">
+    <div class="logo-footer">
+      <a href="detail.html">
+        <img src="/static/img/footer_logo.png" alt="" width="55" height="50" />
+        <span class="footer-txt">大河报新闻发布</span>
+      </a>
+      <span class="footer-font">
+        DaHeBao Python Scrapy&Django
+      </span>
     </div>
+    <div class="copy-right">
+      <p>
+        本站新闻均来源于大河报网站,仅供技术学习和交流使用,请尊重原创内容切勿用商业用途,如有侵权则立即删除。
+      </p>
+      <p class="">
+        Copy From ©<a href=" http://newpaper.dahe.cn/dhb/html/2016-11/30/node_897.htm">大河报--电子版</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<!--===== Footer End =====-->
+
+
+
+<!-- Main Plugin -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/js/index.js"></script>
 
 </body>
 </html>
