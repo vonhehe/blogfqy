@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
   <head>
@@ -7,7 +8,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
     <title>vonhehe --大河报</title>
     <!-- Main Theme -->
-    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href={%static 'css/index.css'%} />
 
     <!-- Font -->
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_n5vylbuqe61or.css" />
@@ -19,21 +20,20 @@
 <div class="full-pic"></div>
 
 
-
 <!--===== Begin Header =====-->
 <header class="header">
   <div class="fixed-head" style="position: fixed; width: 100%; background-color: #65b2f1; -webkit-transform: translateZ(0);">
     <div class="wrap1000 head-wrap">
 
       <div class="logo">
-        <a href="start.html">
-          新闻媒体-发布
+        <a href="detail.html">
+          新闻媒体-发布 {{ time_now }}
         </a>
       </div>
 
 
       <div class="search">
-        <form action=".html" method="get" target="_blank">
+        <form action="search.html" method="get" target="_blank">
           <input name="kw" placeholder="搜索新闻" class="search-inp" type="text" maxlength="10" />
           <input id="search-submit-btn" type="submit" style="display: none;" />
           <label for="search-submit-btn">
@@ -47,8 +47,6 @@
 </header>
 <!--===== header End =====-->
 
-
-
 <!--===== Begin Main =====-->
 <section class="main">
   <div class="main-wrap wrap1000">
@@ -60,31 +58,7 @@
       
       <!-- figure -->
       <div class="figure"></div>
-
       <div class="hot-content">
-
-        <!-- banner >
-        <div class="banner">
-          <ul class="banner-imgs">
-            <li>
-              <a href="detail.html">
-                  <img src="img/1.jpg" alt="" width="750" height="300" />
-              </a>
-            </li>
-            <li>
-              <a href="detail.html"><img src="img/2.jpg" alt="" width="750" height="300" /></a>
-            </li>
-            <li>
-              <a href="detail.html"><img src="img/3.jpg" alt="" width="750" height="300" /></a>
-            </li>
-            <li>
-              <a href="detail.html"><img src="img/4.jpg" alt="" width="750" height="300" /></a>
-            </li>
-            <li>
-              <a href="detail.html"><img src="img/5.png" alt="" width="750" height="300" /></a>
-            </li>
-          </ul><!-- /.imgs -->
-
           <div class="control-page">
             <a class="iconfont icon-bannerzuo" href="javascript: void(0);"></a>
             <a class="iconfont icon-banneryou" href="javascript: void(0);"></a>
@@ -98,7 +72,7 @@
             <li></li>
           </ul>
 
-        </div><!-- /.banner -->
+      </div><!-- /.banner -->
 
 
 
@@ -108,7 +82,7 @@
             {% for new in news %}
 
             <li>
-              <a href="start.html">
+              <a href="detail.html">
                 <div>
                   <img src={{ new.imgsrc }} alt="" width="" /><span></span>
                 </div>
@@ -142,9 +116,9 @@
                 <div class="book-wrap">
                   <a class="cover" href="detail.html">
                       <!--有些新闻没有图片，为了美观我们默认一个图片代替-->
-                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src='/static/img/default.jpg'" alt="no screen"/></a>
+                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src={% static 'img/default.jpg'%}"  alt="no images"/></a>
                   <div class="book-presentation">
-                    <h2><a href="detail.html"> {{ msg.title }}</a></h2>
+                    <h2><a href="start.html"> {{ msg.title }}</a></h2>
                     <p class="book-info">
                       <i></i>
                       <span>{{ msg.banming }}</span>
@@ -175,7 +149,7 @@
   <div class="wrap1000 footer-wrap">
     <div class="logo-footer">
       <a href="detail.html">
-        <img src="/static/img/footer_logo.png" alt="" width="55" height="50" />
+        <img src={%static 'img/footer_logo.png'%} alt="" width="55" height="50" />
         <span class="footer-txt">大河报新闻发布</span>
       </a>
       <span class="footer-font">
@@ -198,7 +172,7 @@
 
 <!-- Main Plugin -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="/static/js/index.js"></script>
+<script src={%static 'js/index.js'%}></script>
 
 </body>
 </html>

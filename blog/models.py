@@ -48,4 +48,4 @@ class Tb20170801(models.Model):
         managed = False
         ordering = ['xuhao']
         # 自动获取当天的数据表
-        db_table = 'tb_%s'%(time.strftime('%Y_%m_%d'))
+        db_table = 'tb_%s'%(time.strftime(u'%Y_%m_%d'))
