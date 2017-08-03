@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'blogfqy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'news',
-        'USER': 'root',
-        'PASSWORD':'fqy123456',
-        'HOST':'127.0.0.1',
+        'NAME': 'sql12188386',
+        'USER': 'sql12188386',
+        'PASSWORD':'gz15QAKMpy',
+        'HOST':'sql12.freemysqlhosting.net',
         'PORT':'3306',
 
     }

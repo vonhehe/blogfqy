@@ -116,7 +116,7 @@
                 <div class="book-wrap">
                   <a class="cover" href="detail.html">
                       <!--有些新闻没有图片，为了美观我们默认一个图片代替-->
-                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src={% static 'img/default.jpg'%}"  alt="no images"/></a>
+                      <img src={{ msg.imgsrc }}  width="136" height="180"  onerror="javascript:this.src='/static/img/default.jpg'"  alt="no images"/></a>
                   <div class="book-presentation">
                     <h2><a href="start.html"> {{ msg.title }}</a></h2>
                     <p class="book-info">
@@ -131,7 +131,8 @@
                       </a>
                     </p>
                     <p class="desc">
-                      {{ msg.body }}
+                        <!--控制新闻内容的量，加快页面的加载-->
+                      {{ msg.body|truncatechars:'80' }}
                     </p>
                   </div>
                 </div>
