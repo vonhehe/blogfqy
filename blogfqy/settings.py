@@ -26,7 +26,7 @@ SECRET_KEY = '8$qd_)cpi2j(q0vfz@ae9_$_i2l#0rs@b%0z0@3ib1gclv=is&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'blogfqy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'vonhehe_default',
         'USER': 'root',
         'PASSWORD': 'fqy123456',
         'HOST': '127.0.0.1',

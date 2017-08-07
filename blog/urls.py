@@ -7,8 +7,9 @@
 from django.conf.urls import url
 from . import views
 
-urlpatterns = {
+urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^start.html/', views.start, name='start'),
     url(r'^love.html/', views.love, name='love'),
-}
+    url(r'^more/(?P<page>[0-9]+)/$', views.more, name='more'),
+]

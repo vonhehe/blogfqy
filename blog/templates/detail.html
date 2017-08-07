@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
   <head>
@@ -7,7 +8,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
     <title>Python探索馆 - Slice</title>
     <!-- Main Theme -->
-    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href={%static 'css/detail.css'%} />
 
     <!-- Font -->
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_n5vylbuqe61or.css" />
@@ -27,31 +28,10 @@
     <div class="wrap1000 head-wrap">
 
       <div class="logo">
-        <a href="index.html">
+        <a href="start.html">
           Python学院图书馆
         </a>
       </div>
-
-      <!-- nav -->
-      <div class="nav">
-        <ul class="nav-list">
-          <li>
-            <a href="more.html"><span>首页</span></a>
-          </li>
-          <li>
-            <a href="more.html"><span>玄幻</span></a>
-          </li>
-          <li>
-            <a href="more.html"><span>修仙</span></a>
-          </li>
-          <li>
-            <a href="more.html"><span>都市</span></a>
-          </li>
-          <li>
-            <a href="more.html"><span>文学</span></a>
-          </li>
-        </ul>
-      </div><!-- ./nav -->
 
       <div class="search">
         <form action="search.html" method="get" target="_blank">

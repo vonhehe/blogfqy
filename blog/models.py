@@ -20,20 +20,21 @@ class DjangoMigrations(models.Model):
         db_table = 'django_migrations'
 
 
-class Tb20161130(models.Model):
-    xuhao = models.CharField(max_length=8)
-    editor = models.CharField(max_length=50)
-    banming = models.CharField(max_length=16)
-    title = models.CharField(max_length=45)
-    imgsrc = models.CharField(max_length=80)
-    body = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = 'tb_2016_11_30'
+# class Tb20161130(models.Model):
+#     xuhao = models.CharField(max_length=8)
+#     editor = models.CharField(max_length=50)
+#     banming = models.CharField(max_length=16)
+#     title = models.CharField(max_length=45)
+#     imgsrc = models.CharField(max_length=80)
+#     body = models.TextField()
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'tb_2016_11_30'
 
 
 class Tb20170801(models.Model):
+    id = models.IntegerField(max_length=4, primary_key=True)
     xuhao = models.CharField(max_length=8)
     editor = models.CharField(max_length=50)
     banming = models.CharField(max_length=16)
