@@ -92,7 +92,7 @@ footer {
 }
 
 .full-pic {
-  background-image: url("../img/background.png");
+  /*background-image: url("../img/background.png");*/
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -461,7 +461,7 @@ footer {
   margin-top: -3px;
   vertical-align: middle;
   background-size: 100% 100%;
-  background-image: url("../img/xuanhuan.png");
+  /*background-image: url("../img/xuanhuan.png");*/
   background-repeat: no-repeat;
 }
 .book-presentation .book-info span {

@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'blogfqy.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 
-# 配置的远端数据库，可用
+# 配置的远端数据库，不可用
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -102,7 +102,12 @@ DATABASES = {
 
     }
 }
-
+# #设置缓存系统
+# CACHES ={
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

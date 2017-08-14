@@ -88,7 +88,7 @@ footer {
 }
 
 .full-pic {
-  background-image: url("../img/background.png");
+  /*background-image: url("../img/background.png");*/
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -125,7 +125,6 @@ label {
   background-image: url("../img/head_logo.png");
   background-repeat: no-repeat;
   background-position: 0 center;
-  background-position: 0 center;
 }
 
 .nav {
@@ -155,11 +154,10 @@ label {
   vertical-align: middle;
 }
 .nav-list li a:hover {
-  /*color: #3590de;*/
-  color:#C2260D;
+  color: #3590de;
 }
 .nav-list li a:hover:after {
-  color: #C2260D;
+  color: #65b2f1;
   width: 63px;
   transition: all 0.2s linear;
   background-color: white;
@@ -463,7 +461,7 @@ label {
   display: -webkit-box;
   padding: 10px;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 8px;
   text-align: left;
   text-indent: 2em;
   line-height: 16px;

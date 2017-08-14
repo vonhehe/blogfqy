@@ -1,0 +1,5 @@
+详情页的思路：
+引入id，method=get
+{%url blog:detail%}
+
+new_当前 = database.objects.filter(id=id)
