@@ -21,18 +21,18 @@
 
 
 <!--===== Begin Header =====-->
-<header class="header">新闻媒体-发布 {{ time_now }}
+<header class="header">
   <div class="fixed-head" style="position: fixed; width: 100%; background-color: #65b2f1; -webkit-transform: translateZ(0);">
     <div class="wrap1000 head-wrap">
 
       <div class="logo">
-        <a href="detail.html">
-
+        <a href="{% url 'blog:start' %}">
+            新闻媒体-发布 {{ time_now }}
         </a>
       </div>
 
 
-      <div class="search">
+      <!--div class="search">
         <form action="search.html" method="get" target="_blank">
           <input name="kw" placeholder="搜索新闻" class="search-inp" type="text" maxlength="10" />
           <input id="search-submit-btn" type="submit" style="display: none;" />
@@ -40,7 +40,7 @@
             <i class="iconfont icon-search"></i>
           </label>
         </form>
-      </div>
+      </div-->
 
     </div><!-- /.wrap1000 -->
   </div>
@@ -106,7 +106,7 @@
             <span>精选</span>
             <p class="txt">fantasy</p>
             <p>news</p>
-            <span class="more"><a href="more.html">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
+            <span class="more"><a href="{%url 'blog:more'%}">更多<span style="float: right;font-size: 12px;letter-spacing: -2px;vertical-align: middle;margin-top: 2px;">&nbsp;&gt;&gt;</span></a></span>
           </div>
           <div class="wrap890 xuanhuan-wrap">
 

@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'blogfqy.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'sql12188386',
-#         'USER': 'sql12188386',
-#         'PASSWORD': 'gz15QAKMpy',
-#         'HOST': 'sql12.freemysqlhosting.net',
+#         'NAME': 'vonhehe$default',
+#         'USER': 'root',
+#         'PASSWORD': 'fqy123456',
+#         'HOST': '127.0.0.1',
 #         'PORT': '3306',
 #
 #     }
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'blogfqy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vonhehe_default',
+        'NAME': 'vonhehe$default',
         'USER': 'root',
         'PASSWORD': 'fqy123456',
         'HOST': '127.0.0.1',
