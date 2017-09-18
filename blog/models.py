@@ -7,7 +7,8 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from __future__ import unicode_literals
 from django.db import models
-import time
+
+#import time
 
 
 class DjangoMigrations(models.Model):
@@ -33,8 +34,8 @@ class DjangoMigrations(models.Model):
 #         db_table = 'tb_2016_11_30'
 
 
-class Tb20170801(models.Model):
-    id = models.IntegerField(max_length=4, primary_key=True)
+class News(models.Model):
+    id = models.IntegerField(primary_key=True)
     xuhao = models.CharField(max_length=8)
     editor = models.CharField(max_length=50)
     banming = models.CharField(max_length=16)
@@ -49,4 +50,5 @@ class Tb20170801(models.Model):
         managed = False
         ordering = ['xuhao']
         # 自动获取当天的数据表
-        db_table = 'tb_%s'%(time.strftime(u'%Y_%m_%d'))
+        #db_table = 'tb_%s'%(time.strftime(u'%Y_%m_%d'))
+        db_table = 'tb_2017_09_15'

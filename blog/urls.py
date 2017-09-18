@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^start.html/', views.start, name='start'),
     url(r'^love.html/', views.love, name='love'),
 #    url(r'^more/(?P<page>[0-9]+)/$', views.more, name='more'),
-    url(r'^more/', views.more, name='more'),
+    url(r'^more', views.more, name='more'),
+    url(r'^login/', views.login, name='login'),
 ]

@@ -1,9 +1,39 @@
 #-*-coding:utf-8 -*-
-from django.shortcuts import render, Http404
-from django.http import HttpResponse
-from blog.models import Tb20170801
+from django.shortcuts import render, render_to_response, HttpResponseRedirect
+#from django.http import HttpResponse
+from blog.models import News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import time
+from django.views.generic import ListView, DetailView
+from django import forms
+
+class LoginForm(forms.Form):
+    email = forms.CharField(label="email", max_length=100)
+    pwd = forms.CharField(label="password", widget=forms.PasswordInput)
+def login(request):
+    if 'email' or 'pwd' not in request.GET:
+        lf = LoginForm()
+        return render_to_response("login.html", {"lf":lf})
+    lf = LoginForm(request.GET)
+    email = lf.data['email']
+    pwd = lf.data['pwd']
+    try:
+        user = User.object.get(email=email)
+    except User.DoesNotExist:
+        pass
+    else:
+        if user.check_password(pwd):
+            return HttpResponseRedirect("login in "+ user.email)
+    return HttpResponseRedirect("/login")
+
+
+class NewsListView(ListView):
+    model = News
+    template_name = "more.html"
+
+class NewsDetailView(DetailView):
+    model = News
+    template_name = "detail.html"
 # Create your views here.
 class Varsto:
     '''
@@ -13,8 +43,8 @@ class Varsto:
 
 def start(request):
     #msg = Tb20170801.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
-    msg_nosrc = Tb20170801.objects.filter().order_by('?')[:8]
-    msg_src = Tb20170801.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
+    msg_nosrc = News.objects.filter().order_by('?')[:8]
+    msg_src = News.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
     #time_today = time.strftime('%Y-%m-%d')
     context = {
         'news': msg_src,   # 必定含有图片的新闻
@@ -24,7 +54,7 @@ def start(request):
     return render(request, 'start.html', context)
 
 def more(request):
-    news_list = Tb20170801.objects.all()
+    news_list = News.objects.all()
     paginator = Paginator(news_list, 10)  # 每页显示 10条新闻
     page = request.GET.get('page')
     #print(page)
@@ -55,7 +85,7 @@ def love(request):
     return render(request, 'love.html', {'string': string})
 
 def detail(request):
-    news = Tb20170801.objects.all()
+    news = News.objects.all()
     context={
         'news': news,
     }
