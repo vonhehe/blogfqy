@@ -4,6 +4,7 @@ from django.shortcuts import render, render_to_response, HttpResponseRedirect
 from blog.models import News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import time
+from django.views.decorators.cache import cache_page
 from django.views.generic import ListView, DetailView
 from django import forms
 
@@ -41,6 +42,8 @@ class Varsto:
     '''
     time_today = time.strftime('%Y-%m-%d')
 
+
+@cache_page(60 * 15)
 def start(request):
     #msg = Tb20170801.objects.filter().exclude(imgsrc='无配图').order_by('?')[:4]
     msg_nosrc = News.objects.filter().order_by('?')[:8]
@@ -53,6 +56,8 @@ def start(request):
     }
     return render(request, 'start.html', context)
 
+
+@cache_page(60 * 15)
 def more(request):
     news_list = News.objects.all()
     paginator = Paginator(news_list, 10)  # 每页显示 10条新闻

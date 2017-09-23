@@ -25,6 +25,23 @@
     doc.Documents.Open(path);
     }
     </script><!--想在线实现阅读doc文件来着，可惜用这种方法打不开，继续研究》_《-->
+    <script>
+        function read_resume() {
+            load = window.confirm("没这个兴趣，就不要看我的隐私了吧，请点击取消。一首《谢谢侬》送给您，服务器容量有限，烦请打开您的播放器自己放一遍吧~")
+            if (load == true) {
+                window.location.replace("{%static 'Von_Resume.doc'%}");
+            }
+            else {
+                window.location.reload(true)
+                //document.write("kkghlskjfhkshfk")
+                //返回上个页面，并刷新
+                //document.referrer 前一个页面的URL
+                //history.go(-1) 返回上个页面，但不会刷新
+                //history.back  返回上个页面，但不会刷新
+            }
+
+        }
+    </script>
 
     <header class="jumbotron">
         <!--img class="hidden" src="/static/img/bd.png" width="800" height="600"-->
@@ -52,7 +69,7 @@
                 <p>感谢莎莎一直以来对我的支持。</p>
             </div>
             <div class="col-md-6">
-                <h2><a href={%static 'Von_Resume.doc'%}>打个广告</a></h2>
+                <h2><a onclick="read_resume()">打个广告</a></h2>
                 <p>个人简历φ(>ω<*) 求收留</p>
             </div>
         </div>
