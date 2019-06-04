@@ -1,4 +1,5 @@
-#-*-coding:utf-8 -*-
+#-*- encoding:utf-8 -*-
+
 from django.shortcuts import render, render_to_response, HttpResponseRedirect
 #from django.http import HttpResponse
 from blog.models import News
@@ -11,6 +12,7 @@ from django import forms
 class LoginForm(forms.Form):
     email = forms.CharField(label="email", max_length=100)
     pwd = forms.CharField(label="password", widget=forms.PasswordInput)
+
 def login(request):
     if 'email' or 'pwd' not in request.GET:
         lf = LoginForm()
